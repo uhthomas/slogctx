@@ -38,13 +38,26 @@ func Log(ctx context.Context, level slog.Level, msg string, args ...any) {
 	From(ctx).Log(ctx, level, msg, args...)
 }
 
-// Info gets the logger from the context and passes the given arguments to Info.
+// Debug gets the logger from the context and passes the given arguments to
+// DebugContext.
+func Debug(ctx context.Context, level slog.Level, msg string, args ...any) {
+	From(ctx).DebugContext(ctx, msg, args...)
+}
+
+// Info gets the logger from the context and passes the given arguments to
+// InfoContext.
 func Info(ctx context.Context, msg string, args ...any) {
 	From(ctx).InfoContext(ctx, msg, args...)
 }
 
+// Warn gets the logger from the context and passes the given arguments to
+// WarnContext.
+func Warn(ctx context.Context, msg string, args ...any) {
+	From(ctx).WarnContext(ctx, msg, args...)
+}
+
 // Error gets the logger from the context and passes the given arguments to
-// Error.
+// ErrorContext.
 func Error(ctx context.Context, msg string, args ...any) {
 	From(ctx).ErrorContext(ctx, msg, args...)
 }
