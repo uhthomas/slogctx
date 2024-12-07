@@ -40,7 +40,7 @@ func Log(ctx context.Context, level slog.Level, msg string, args ...any) {
 
 // Debug gets the logger from the context and passes the given arguments to
 // DebugContext.
-func Debug(ctx context.Context, level slog.Level, msg string, args ...any) {
+func Debug(ctx context.Context, msg string, args ...any) {
 	From(ctx).DebugContext(ctx, msg, args...)
 }
 
